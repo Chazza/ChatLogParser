@@ -10,5 +10,6 @@
   "author": "Chazza",
   "license": "ISC",
   "dependencies": {},
+  "repository": "https://github.com/Chazza/ChatLogParser/packages",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
