@@ -53,7 +53,7 @@ class Parser {
       this.messages = {
         username: this.username,
         timeStamp: this.timeStamp,
-        currentMessage: this.currentMessage
+        message: this.currentMessage
       };
 
       return this.messages;
