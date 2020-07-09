@@ -1,13 +1,14 @@
 {
-  "name": "chat-format-grabber",
+  "name": "chat-log-parser",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple, easy-to-use chat log parser with javascript.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chazza",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
