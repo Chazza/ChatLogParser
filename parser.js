@@ -25,7 +25,9 @@ class Parser {
       messages: messages,
       service: {
         discord: messages[0].timeStamp.match(discordReg) != null,
-        slack: messages[0].timeStamp.match(slackReg) != null
+        slack: messages[0].timeStamp.match(slackReg) != null,
+        telegram: messages[0].timeStamp.match(telegramReg) != null,
+        irc: messages[0].timeStamp.match(IRCReg) != null,
       }
     };
   }
@@ -38,10 +40,8 @@ class Parser {
     if (sortLine) {
       this.username = sortLine.username;
       this.timeStamp = sortLine.timeStamp;
-      // this.irc = sortLine.irc;
     }
 
-    //Identify if it is an actual message, then package it away.
     if (!sortLine || this.irc) {
       this.currentMessage = line;
       if (this.irc) {
@@ -70,7 +70,6 @@ function parseLine(line) {
   let matchesDaytimeReg = line.match(daytimeReg);
   let matchesIRC = line.match(IRCReg);
   let matchesTelegram = line.match(telegramReg);
-
   let irc = matchesIRC;
 
   let matchesOne = matchesDDMMYY || matchesDaytimeReg || matchesIRC || matchesTelegram;
@@ -91,8 +90,7 @@ function parseLine(line) {
 
   return !matchesOne ? null : {
     username: String(username).trim(),
-    timeStamp: String(matchesOne[0]),
-    // irc: Boolean(irc),
+    timeStamp: String(matchesOne[0])
   };
 
 }
