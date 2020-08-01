@@ -1,6 +1,6 @@
 {
-  "name": "chat-log-parser",
-  "version": "1.0.0",
+  "name": "@Chazza/chat-log-parser",
+  "version": "1.0.1",
   "description": "A simple, easy-to-use chat log parser with javascript.",
   "main": "app.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "author": "Chazza",
   "license": "ISC",
   "dependencies": {},
-  "repository": "https://github.com/Chazza/ChatLogParser/packages",
+  "repository": "https://github.com/Chazza/ChatLogParser/",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }

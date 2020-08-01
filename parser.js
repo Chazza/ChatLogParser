@@ -21,14 +21,26 @@ class Parser {
       }
     });
 
+    var service = null;
+
+    if(messages[0].timeStamp != null) {
+      if(messages[0].timeStamp.match(discordReg) != null) {
+        service = "discord";
+      }
+      if(messages[0].timeStamp.match(slackReg) != null) {
+        service = "slack";
+      }
+      if(messages[0].timeStamp.match(telegramReg) != null) {
+        service = "telegram";
+      }
+      if(messages[0].timeStamp.match(IRCReg) != null) {
+        service = "irc";
+      }
+    }
+    
     return {
       messages: messages,
-      service: {
-        discord: messages[0].timeStamp.match(discordReg) != null,
-        slack: messages[0].timeStamp.match(slackReg) != null,
-        telegram: messages[0].timeStamp.match(telegramReg) != null,
-        irc: messages[0].timeStamp.match(IRCReg) != null,
-      }
+      service: service,
     };
   }
 
